@@ -9,7 +9,7 @@ import os
 app = Flask(__name__)
 key = os.urandom(24)
 app.config['SECRET_KEY'] = key
-api_key = "45ad015e75571f1e0f8b95649fe39a2a"
+api_key = "<api key here>"
 # create our weather database
 engine = create_engine('sqlite:///weather.db.sqlite', echo=True, connect_args={"check_same_thread": False})
 Base = declarative_base()
