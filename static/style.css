@@ -1,0 +1,31 @@
+.input-city {
+    margin: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-self: center;
+}
+
+.card {
+    margin: 20px;
+}
+
+.degrees {
+    font-size = 20px;
+}
+
+.state {
+    font-size = 10px;
+}
+
+.city {
+    font-face: Bold;
+    font-size: 22px;
+}
+
+
+.main-content {
+    justify-self: center;
+}
+
