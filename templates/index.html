@@ -7,27 +7,38 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
-        <div class="main-cont   ent">
+        <div class="main-content">
+            <!-- the 'with' statement automatically handles exception and other stuff -->
             {% with message = get_flashed_messages() %}
             {% if message %}
-                <div class="alert alert-primary" role="alert">
+                <div class="notification is-warning" role="alert">
                     {{ message[0] }}
                 </div>
             {% endif %}
             {% endwith %}
-            <form class="input-city" method="post">
-                <input name="input-city" id="input-city" type="text" placeholder="Enter location">
-                <button class="submit-button" type="submit">Add</button>
-            </form>
-            <div class="cards">
+            <div class="container is-centered">
+                <form class="input-city" method="post">
+                    <input class="input is-medium" name="input-city" id="input-city" type="text" placeholder="Enter location">
+                    <div class="control">
+                        <button class="button is-primary is-medium is-rounded" type="submit">Add</button>
+                    </div> 
+                </form> 
+            </div>
+            <div class="columns is-multiline is-centered">
                 {% for obj in data %}
-                    <div class="card">
-                        <form class="delete-button" action="/delete/{{ obj.id }}">
-                            <button class="delete-button">X</button>
-                        </form>
-                        <div class="degrees">{{ obj.temperature }} °C</div>
-                        <div class="state">{{ obj.description }}</div>
-                        <div class="city">{{ obj.name }}</div>
+                    <div class="column is-3">
+                        <div class="card is-3by4">
+                            <header class="card-header"> 
+                                <form action="/delete/{{ obj.id }}">
+                                    <button class="delete is-large">X</button>
+                                </form>
+                            </header>
+                            <div class="card-content">
+                                <div class="title is-8 is-bold">{{ obj.temperature }} °C</div>
+                                <div class="content">{{ obj.description }}</div>
+                                <div class="subtitle">{{ obj.name }}</div>
+                            </div>
+                        </div>
                     </div>
                 {% endfor %}
             </div>

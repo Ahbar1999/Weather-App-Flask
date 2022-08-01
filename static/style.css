@@ -1,31 +1,15 @@
-.input-city {
-    margin: 20px;
-}
-
-.cards {
-    display: flex;
-    justify-self: center;
-}
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
 .card {
+    margin: 50px;
+    height: 200px;
+    width: 300px;
+}
+
+.button {
+    margin-left: 20px;
+}
+
+.input {
     margin: 20px;
 }
-
-.degrees {
-    font-size = 20px;
-}
-
-.state {
-    font-size = 10px;
-}
-
-.city {
-    font-face: Bold;
-    font-size: 22px;
-}
-
-
-.main-content {
-    justify-self: center;
-}
-

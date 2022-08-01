@@ -56,6 +56,9 @@ def index():
             session.commit()
         else:
             flash("The city has already been added to the list!")
+        
+        return redirect("/")
+
     # add our weather card objects to be sent to the template
     weather_data = []
     for row in session.query(WeatherCard).all():
@@ -69,4 +72,4 @@ if __name__ == '__main__':
         arg_host, arg_port = sys.argv[1].split(':')
         app.run(host=arg_host, port=arg_port)
     else:
-        app.run(port=8080)
+        app.run(debug=True, port=8080)
